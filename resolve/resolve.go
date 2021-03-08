@@ -148,6 +148,10 @@ func REPLChunk(file *syntax.File, isGlobal, isPredeclared, isUniversal func(name
 	if len(r.errors) > 0 {
 		return r.errors
 	}
+
+	// typecheck
+	typecheckFile(file)
+
 	return nil
 }
 
